@@ -1,0 +1,164 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Geometry x:Key="layer3Geometry">F1 M782.78,355.13z M0,0z M0,164.14L0,164.14 109.21,104.34 161.7,133.65 171.07,127.69 174.16,130.27 189.13,119.44 265.05,166.17 308.07,140.81 316.2,146.24 340.97,131.81 378.13,159.16 410.65,138.52 443.16,160.19 447.29,157.1 473.62,175.16 486.65,163.66 515.07,179.4 536.09,156.44 538.9,157.45 560.07,132.16 571.94,136.81 589.75,111.25 592.42,112.61 611.74,85.77 620.79,89.38 629.18,61.44 630.47,61.7 635.78,37.39 636.56,37.52 638.55,21.26 639.71,18.64 633.87,15.06 630.71,0.74 632.42,0 647.37,1.4 654.03,3.45 782.78,21.88 782.78,355.13 0,355.13 0,164.14z</Geometry>
+  <DrawingGroup x:Key="layer3DrawingGroup" ClipGeometry="M0,0 V355.13 H782.78 V0 H0 Z">
+    <DrawingGroup Opacity="1">
+      <DrawingGroup.ClipGeometry>
+        <RectangleGeometry RadiusX="0" RadiusY="0" Rect="0,0,759.72,435.87" />
+      </DrawingGroup.ClipGeometry>
+      <GeometryDrawing Brush="#FF1D1D1B" Geometry="{StaticResource layer3Geometry}" />
+    </DrawingGroup>
+  </DrawingGroup>
+  <DrawingImage x:Key="layer3" Drawing="{StaticResource layer3DrawingGroup}" />
+  <Geometry x:Key="layer5Geometry">F1 M782.78,452.13z M0,0z M0,181.71L0,181.71 111.9,242.01 119.15,237.41 171.05,264.06 199.44,244.87 236.54,266.21 242.91,261.44 278.45,278.98 315.92,254.29 351.13,274.8 360.41,268.18 398.52,290.61 433.97,266.29 444.57,271.69 490.49,237.25 519.42,250.13 550.38,218.84 570.04,226.1 604.41,178.68 611.28,181.4 629.55,146.56 634.08,148.05 654.27,102.3 657.64,103.28 690.79,0 782.78,0 782.78,452.13 0,452.13 0,181.71z</Geometry>
+  <DrawingGroup x:Key="layer5DrawingGroup" ClipGeometry="M0,0 V452.13 H782.78 V0 H0 Z">
+    <DrawingGroup Opacity="1">
+      <DrawingGroup.ClipGeometry>
+        <RectangleGeometry RadiusX="0" RadiusY="0" Rect="0,0,759.72,435.87" />
+      </DrawingGroup.ClipGeometry>
+      <GeometryDrawing Brush="#FF1D1D1B" Geometry="{StaticResource layer5Geometry}" />
+    </DrawingGroup>
+  </DrawingGroup>
+  <DrawingImage x:Key="layer5" Drawing="{StaticResource layer5DrawingGroup}" />
+  <Geometry x:Key="layer2Geometry">F1 M782.78,316.65z M0,0z M0,38.53L0,38.53 90.65,88.39 102,88.39 110,91.61 150.78,70.97 190.63,95.29 201.42,91.38 214.33,101.22 245.49,83.74 257.36,90.97 279.17,78.22 284.76,81.6 378.65,25.93 448.08,59.16 460.2,53.29 518.25,81.13 522.65,79.1 583.55,112 782.78,0 782.78,316.64 0,316.64 0,38.53z</Geometry>
+  <DrawingGroup x:Key="layer2DrawingGroup" ClipGeometry="M0,0 V316.65 H782.78 V0 H0 Z">
+    <DrawingGroup Opacity="1">
+      <DrawingGroup.ClipGeometry>
+        <RectangleGeometry RadiusX="0" RadiusY="0" Rect="0,0,759.72,435.87" />
+      </DrawingGroup.ClipGeometry>
+      <GeometryDrawing Brush="#FF1D1D1B" Geometry="{StaticResource layer2Geometry}" />
+    </DrawingGroup>
+  </DrawingGroup>
+  <DrawingImage x:Key="layer2" Drawing="{StaticResource layer2DrawingGroup}" />
+  <Geometry x:Key="layer6Geometry">F1 M783.44,325.73z M0,0z M0,66.16L0,66.16 133.12,136.06 143.96,126.77 217.31,164.31 228.47,154.51 300.27,188.32 352.08,155.54 404.72,185.83 424.57,173.38 457.03,190.03 507.05,158.51 530.19,168.44 581.12,124.95 595.33,130.06 646.67,85.7 660.68,90.27 783.44,0 783.44,325.73 0.66,325.73 0,66.16z</Geometry>
+  <DrawingGroup x:Key="layer6DrawingGroup" ClipGeometry="M0,0 V325.73 H783.44 V0 H0 Z">
+    <DrawingGroup Opacity="1">
+      <DrawingGroup.ClipGeometry>
+        <RectangleGeometry RadiusX="0" RadiusY="0" Rect="0,0,759.72,435.87" />
+      </DrawingGroup.ClipGeometry>
+      <GeometryDrawing Brush="#FF1D1D1B" Geometry="{StaticResource layer6Geometry}" />
+    </DrawingGroup>
+  </DrawingGroup>
+  <DrawingImage x:Key="layer6" Drawing="{StaticResource layer6DrawingGroup}" />
+    <Geometry x:Key="layer2HighlightsGeometry1">F1 M1049.42,418.45z M0,0z M276.9,45.03L276.9,45.03 271.48,51.74 274.19,55.19 263.88,64.11 251.93,57.68 276.9,45.03z</Geometry>
+    <Geometry x:Key="layer2HighlightsGeometry2">F1 M1049.42,418.45z M0,0z M586.32,27.36L586.32,27.36 593.75,42.58 574.21,33.23 586.32,27.36z</Geometry>
+    <Geometry x:Key="layer2HighlightsGeometry3">F1 M1049.42,418.45z M0,0z M648.77,53.16L648.77,53.16 650.85,58.3 644.38,55.19 648.77,53.16z</Geometry>
+    <Geometry x:Key="layer2HighlightsGeometry4">F1 M1049.42,418.45z M0,0z M371.61,57.81L371.61,57.81 369.23,63.55 370.16,65.74 365.23,74.23 369.55,86.39 358.13,96.45 331.22,80.46 371.61,57.81z</Geometry>
+    <Geometry x:Key="layer2HighlightsGeometry5">F1 M1049.42,418.45z M0,0z M504.77,0L504.77,0 491.81,22.26 498.48,23.4 491.81,50.9 507.6,54.64 446.52,91.16 433.36,80.71 421.14,87.95 383.48,65.03 405.29,52.28 407.91,57.43 504.77,0z</Geometry>
+    <DrawingGroup x:Key="layer2HighlightsDrawingGroup" ClipGeometry="M0,0 V418.45 H1049.42 V0 H0 Z">
+        <DrawingGroup Opacity="1">
+            <DrawingGroup.ClipGeometry>
+                <RectangleGeometry RadiusX="0" RadiusY="0" Rect="0,0,759.72,435.87" />
+            </DrawingGroup.ClipGeometry>
+            <DrawingGroup Opacity="1">
+                <GeometryDrawing Brush="#FF1D1D1B" Geometry="{StaticResource layer2HighlightsGeometry1}" />
+                <GeometryDrawing Brush="#FF1D1D1B" Geometry="{StaticResource layer2HighlightsGeometry2}" />
+                <GeometryDrawing Brush="#FF1D1D1B" Geometry="{StaticResource layer2HighlightsGeometry3}" />
+                <GeometryDrawing Brush="#FF1D1D1B" Geometry="{StaticResource layer2HighlightsGeometry4}" />
+                <GeometryDrawing Brush="#FF1D1D1B" Geometry="{StaticResource layer2HighlightsGeometry5}" />
+            </DrawingGroup>
+            <GeometryDrawing Brush="#FF1D1D1B">
+                <GeometryDrawing.Geometry>
+                    <RectangleGeometry RadiusX="0" RadiusY="0" Rect="893.42,269.29,156,149.16" />
+                </GeometryDrawing.Geometry>
+            </GeometryDrawing>
+            <GeometryDrawing Brush="#FF1D1D1B">
+                <GeometryDrawing.Geometry>
+                    <RectangleGeometry RadiusX="0" RadiusY="0" Rect="0,269.29,149.16,149.16" />
+                </GeometryDrawing.Geometry>
+            </GeometryDrawing>
+        </DrawingGroup>
+    </DrawingGroup>
+    <DrawingImage x:Key="layer2Highlights" Drawing="{StaticResource layer2HighlightsDrawingGroup}" />
+    <Geometry x:Key="layer4Geometry">F1 M782.78,352.52z M0,0z M0,77.71L0,77.71 99.57,132.9 107.62,128.18 122.21,137.3 141.5,123.36 175.08,141.84 187.35,134.06 192.04,137.44 210.69,124.42 252.75,150.26 255.84,147.94 277.36,159.88 280.07,158.13 317.58,177.75 325.52,172.71 347.58,187.81 361.91,177.75 374.65,185.97 399.73,169.23 406.62,174.18 416.49,167.29 432,177.42 467.23,151.5 476.99,157.25 479.88,155.28 498.86,164.79 538.69,126.05 552.01,132.29 574.49,103.99 579.69,106.06 598.19,81.77 607.35,84.63 618.8,49.55 620.15,49.87 624.11,26.4 625.39,26.75 625.45,16.07 623.81,0 640.39,2.97 669.07,14 782.78,55.26 782.78,352.52 0,352.52 0,77.71z</Geometry>
+  <DrawingGroup x:Key="layer4DrawingGroup" ClipGeometry="M0,0 V352.52 H782.78 V0 H0 Z">
+    <DrawingGroup Opacity="1">
+      <DrawingGroup.ClipGeometry>
+        <RectangleGeometry RadiusX="0" RadiusY="0" Rect="0,0,759.72,435.87" />
+      </DrawingGroup.ClipGeometry>
+      <GeometryDrawing Brush="#FF1D1D1B" Geometry="{StaticResource layer4Geometry}" />
+    </DrawingGroup>
+  </DrawingGroup>
+  <DrawingImage x:Key="layer4" Drawing="{StaticResource layer4DrawingGroup}" />
+  <Geometry x:Key="layer1Geometry">F1 M782.78,303.87z M0,0z M0,0L0,0 147.01,84.24 190.76,59.95 204.18,68.21 206.67,66.2 215.56,72.34 263.49,47.03 286.8,57.84 289.03,56.52 331.68,73.68 366.78,54.07 422.52,88.13 452.45,69.03 468.45,76.26 518.92,46.39 522.53,49.49 561.75,25.23 617.71,51.99 626.27,46.39 782.78,124.11 782.78,303.87 0,303.87 0,0z</Geometry>
+  <DrawingGroup x:Key="layer1DrawingGroup" ClipGeometry="M0,0 V303.87 H782.78 V0 H0 Z">
+    <DrawingGroup Opacity="1">
+      <DrawingGroup.ClipGeometry>
+        <RectangleGeometry RadiusX="0" RadiusY="0" Rect="0,0,759.72,435.87" />
+      </DrawingGroup.ClipGeometry>
+      <GeometryDrawing Brush="#FF1D1D1B" Geometry="{StaticResource layer1Geometry}" />
+    </DrawingGroup>
+  </DrawingGroup>
+  <DrawingImage x:Key="layer1" Drawing="{StaticResource layer1DrawingGroup}" />
+                <!--Arrow-->
+    <Geometry x:Key="npArrowGeometry">F1 M308.87,93.55z M0,0z M0,92.6L0,92.6 146.32,0 308.87,93.55 0,92.6z</Geometry>
+    <DrawingGroup x:Key="npArrowDrawingGroup" ClipGeometry="M0,0 V93.55 H308.87 V0 H0 Z">
+        <DrawingGroup Opacity="1">
+            <DrawingGroup Opacity="1">
+                <DrawingGroup Opacity="1">
+                    <GeometryDrawing Brush="#FF1D1D1B" Geometry="{StaticResource npArrowGeometry}" />
+                </DrawingGroup>
+            </DrawingGroup>
+        </DrawingGroup>
+    </DrawingGroup>
+    <DrawingImage x:Key="npArrow" Drawing="{StaticResource npArrowDrawingGroup}" />
+                <!--Sun-->
+    <Geometry x:Key="Mode____Light___SVGGeometry1">F1 M24,24z M0,0z M20,12L21,12</Geometry>
+    <Geometry x:Key="Mode____Light___SVGGeometry2">F1 M24,24z M0,0z M3,12L4,12</Geometry>
+    <Geometry x:Key="Mode____Light___SVGGeometry3">F1 M24,24z M0,0z M12,20L12,21</Geometry>
+    <Geometry x:Key="Mode____Light___SVGGeometry4">F1 M24,24z M0,0z M12,3L12,4</Geometry>
+    <Geometry x:Key="Mode____Light___SVGGeometry5">F1 M24,24z M0,0z M17.6569,17.6569L18.364,18.364</Geometry>
+    <Geometry x:Key="Mode____Light___SVGGeometry6">F1 M24,24z M0,0z M5.63605,5.63604L6.34315,6.34315</Geometry>
+    <Geometry x:Key="Mode____Light___SVGGeometry7">F1 M24,24z M0,0z M6.34314,17.6569L5.63603,18.364</Geometry>
+    <Geometry x:Key="Mode____Light___SVGGeometry8">F1 M24,24z M0,0z M18.364,5.63604L17.6568,6.34315</Geometry>
+    <DrawingGroup x:Key="Mode____Light___SVGDrawingGroup" ClipGeometry="M0,0 V24 H24 V0 H0 Z">
+        <GeometryDrawing>
+            <GeometryDrawing.Pen>
+                <Pen Brush="#FF292929" Thickness="2" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Round" />
+            </GeometryDrawing.Pen>
+            <GeometryDrawing.Geometry>
+                <EllipseGeometry RadiusX="4" RadiusY="4" Center="12,12" />
+            </GeometryDrawing.Geometry>
+        </GeometryDrawing>
+        <GeometryDrawing Geometry="{StaticResource Mode____Light___SVGGeometry1}">
+            <GeometryDrawing.Pen>
+                <Pen Brush="#FF292929" Thickness="2" StartLineCap="Round" EndLineCap="Round" LineJoin="Miter" MiterLimit="1" />
+            </GeometryDrawing.Pen>
+        </GeometryDrawing>
+        <GeometryDrawing Geometry="{StaticResource Mode____Light___SVGGeometry2}">
+            <GeometryDrawing.Pen>
+                <Pen Brush="#FF292929" Thickness="2" StartLineCap="Round" EndLineCap="Round" LineJoin="Miter" MiterLimit="1" />
+            </GeometryDrawing.Pen>
+        </GeometryDrawing>
+        <GeometryDrawing Geometry="{StaticResource Mode____Light___SVGGeometry3}">
+            <GeometryDrawing.Pen>
+                <Pen Brush="#FF292929" Thickness="2" StartLineCap="Round" EndLineCap="Round" LineJoin="Miter" MiterLimit="1" />
+            </GeometryDrawing.Pen>
+        </GeometryDrawing>
+        <GeometryDrawing Geometry="{StaticResource Mode____Light___SVGGeometry4}">
+            <GeometryDrawing.Pen>
+                <Pen Brush="#FF292929" Thickness="2" StartLineCap="Round" EndLineCap="Round" LineJoin="Miter" MiterLimit="1" />
+            </GeometryDrawing.Pen>
+        </GeometryDrawing>
+        <GeometryDrawing Geometry="{StaticResource Mode____Light___SVGGeometry5}">
+            <GeometryDrawing.Pen>
+                <Pen Brush="#FF292929" Thickness="2" StartLineCap="Round" EndLineCap="Round" LineJoin="Miter" MiterLimit="1" />
+            </GeometryDrawing.Pen>
+        </GeometryDrawing>
+        <GeometryDrawing Geometry="{StaticResource Mode____Light___SVGGeometry6}">
+            <GeometryDrawing.Pen>
+                <Pen Brush="#FF292929" Thickness="2" StartLineCap="Round" EndLineCap="Round" LineJoin="Miter" MiterLimit="1" />
+            </GeometryDrawing.Pen>
+        </GeometryDrawing>
+        <GeometryDrawing Geometry="{StaticResource Mode____Light___SVGGeometry7}">
+            <GeometryDrawing.Pen>
+                <Pen Brush="#FF292929" Thickness="2" StartLineCap="Round" EndLineCap="Round" LineJoin="Miter" MiterLimit="1" />
+            </GeometryDrawing.Pen>
+        </GeometryDrawing>
+        <GeometryDrawing Geometry="{StaticResource Mode____Light___SVGGeometry8}">
+            <GeometryDrawing.Pen>
+                <Pen Brush="#FF292929" Thickness="2" StartLineCap="Round" EndLineCap="Round" LineJoin="Miter" MiterLimit="1" />
+            </GeometryDrawing.Pen>
+        </GeometryDrawing>
+    </DrawingGroup>
+    <DrawingImage x:Key="IconSun" Drawing="{StaticResource Mode____Light___SVGDrawingGroup}" />
+</ResourceDictionary>

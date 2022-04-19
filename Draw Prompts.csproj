@@ -1,0 +1,57 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows10.0.22000.0</TargetFramework>
+    <RootNamespace>Draw_Prompts</RootNamespace>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <SupportedOSPlatformVersion>10.0.18362.0</SupportedOSPlatformVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="res\Masks\Close.png" />
+    <None Remove="res\Masks\layer1.png" />
+    <None Remove="res\Masks\layer2.png" />
+    <None Remove="res\Masks\layer2Highlights.png" />
+    <None Remove="res\Masks\layer3.png" />
+    <None Remove="res\Masks\layer4.png" />
+    <None Remove="res\Masks\layer5.png" />
+    <None Remove="res\Masks\layer6.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Haley.Abstractions" Version="1.0.15" />
+    <PackageReference Include="Haley.Extensions" Version="2.1.10" />
+    <PackageReference Include="Haley.MVVM" Version="6.2.17" />
+    <PackageReference Include="Haley.WPF" Version="5.2.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="res\Masks\Close.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="res\Masks\layer1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="res\Masks\layer2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="res\Masks\layer2Highlights.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="res\Masks\layer3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="res\Masks\layer4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="res\Masks\layer5.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="res\Masks\layer6.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+</Project>

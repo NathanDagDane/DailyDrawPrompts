@@ -1,0 +1,207 @@
+﻿<Window x:Class="Draw_Prompts.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:hly="http://schemas.hpod9.com/haley/mvvm"
+        xmlns:hlyWPF="http://schemas.hpod9.com/haley/wpf"
+        xmlns:local="clr-namespace:Draw_Prompts"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        Initialized="Window_Initialized" MouseLeftButtonDown="WindowDrag" Closed="OnExit"
+        Background="Transparent" AllowsTransparency="true" WindowStyle="None" ResizeMode="NoResize"
+        Title="Clickett" SizeToContent="Height" HorizontalAlignment="Stretch" Width="610">
+
+    <Window.Resources>
+        <Style x:Key="InvisibleButton" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" BorderThickness="0" BorderBrush="Black" Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Viewbox FocusVisualStyle="{x:Null}">
+        <Canvas FocusVisualStyle="{x:Null}" x:Name="fullCanvas" Width="600" Height="290">
+            <Border FocusVisualStyle="{x:Null}" CornerRadius="25" BorderThickness="0" Width="600" Height="290">
+                <Border.Clip>
+                    <RectangleGeometry RadiusX="25" RadiusY="25" Rect="0,0,600,290"/>
+                </Border.Clip>
+                <Grid>
+                    <Border Background="{DynamicResource Sky}" FocusVisualStyle="{x:Null}"/>
+                    <Border Background="{DynamicResource L1}" IsHitTestVisible="False" VerticalAlignment="Center" Width="660" HorizontalAlignment="Center" Height="400">
+                        <Border.OpacityMask>
+                            <ImageBrush ImageSource="{StaticResource layer1}" Stretch="Uniform" Viewbox="0,-0.245,1,1"/>
+                        </Border.OpacityMask>
+                    </Border>
+                    <Border Background="{DynamicResource L2}" IsHitTestVisible="False" VerticalAlignment="Center" Width="660" HorizontalAlignment="Center" Height="400">
+                        <Border.OpacityMask>
+                            <ImageBrush ImageSource="{StaticResource layer2}" Stretch="Uniform" Viewbox="0,-0.21,1,1"/>
+                        </Border.OpacityMask>
+                    </Border>
+                    <Border Background="{DynamicResource L2Hi}" IsHitTestVisible="False" VerticalAlignment="Center" Width="660" HorizontalAlignment="Center" Height="400">
+                        <Border.OpacityMask>
+                            <ImageBrush ImageSource="{StaticResource layer2Highlights}" Stretch="Uniform" Viewbox="0.167,-0.343,1,1"/>
+                        </Border.OpacityMask>
+                    </Border>
+                    <Border Background="{DynamicResource L3}" IsHitTestVisible="False" VerticalAlignment="Center" Width="660" HorizontalAlignment="Center" Height="400">
+                        <Border.OpacityMask>
+                            <ImageBrush ImageSource="{StaticResource layer3}" Stretch="Uniform" Viewbox="0,-0.145,1,1"/>
+                        </Border.OpacityMask>
+                    </Border>
+                    <Border Background="{DynamicResource L4}" IsHitTestVisible="False" VerticalAlignment="Center" Width="660" HorizontalAlignment="Center" Height="400">
+                        <Border.OpacityMask>
+                            <ImageBrush ImageSource="{StaticResource layer4}" Stretch="Uniform" Viewbox="0,-0.15,1,1"/>
+                        </Border.OpacityMask>
+                    </Border>
+
+                    <Button Name="nextButt" Style="{StaticResource InvisibleButton}" HorizontalAlignment="Stretch" Click="NextClick" Background="Transparent" Canvas.Left="20" Canvas.Top="20" RenderTransformOrigin="0.5,0.5" FocusVisualStyle="{x:Null}" Margin="100,0,200,235" MouseEnter="NextArrowMouseEnter" MouseLeave="NextArrowMouseLeave" Cursor="Arrow"/>
+                    <Button Name="prevButt" Style="{StaticResource InvisibleButton}" HorizontalAlignment="Stretch" Click="PrevClick" Background="Transparent" Canvas.Left="20" Canvas.Top="20" RenderTransformOrigin="0.5,0.5" FocusVisualStyle="{x:Null}" Margin="100,137,200,81" MouseEnter="PrevArrowMouseEnter" MouseLeave="PrevArrowMouseLeave" Cursor="Arrow"/>
+
+                    <StackPanel Name="promptStack" Width="500" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,0,90" FocusVisualStyle="{x:Null}" RenderTransformOrigin="0.5,0.5">
+                        <Button Name="promptButt" Style="{StaticResource InvisibleButton}" HorizontalAlignment="Center" Click="SearchPrompt" Cursor="Hand" Background="Transparent" Canvas.Left="20" Canvas.Top="20" RenderTransformOrigin="0.5,0.5" FocusVisualStyle="{x:Null}">
+                            <Button.RenderTransform>
+                                <ScaleTransform x:Name="scaleTransform" ScaleX="0.98" ScaleY="1.02"/>
+                            </Button.RenderTransform>
+                            <Button.Triggers>
+                                <EventTrigger RoutedEvent="Button.MouseEnter">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="scaleTransform"
+                                         Storyboard.TargetProperty="ScaleX" To="1.05" Duration="0:0:0.4" AccelerationRatio="0.1" DecelerationRatio="0.9"/>
+                                            <DoubleAnimation Storyboard.TargetName="scaleTransform"
+                                         Storyboard.TargetProperty="ScaleY" To="1.05" Duration="0:0:0.4" AccelerationRatio="0.1" DecelerationRatio="0.9"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                                <EventTrigger RoutedEvent="Button.MouseLeave">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="scaleTransform"
+                                         Storyboard.TargetProperty="ScaleX" To="1" Duration="0:0:0.6" AccelerationRatio="0.3" DecelerationRatio="0.7"/>
+                                            <DoubleAnimation Storyboard.TargetName="scaleTransform"
+                                         Storyboard.TargetProperty="ScaleY" To="1" Duration="0:0:0.6" AccelerationRatio="0.3" DecelerationRatio="0.7" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                            </Button.Triggers>
+                            <TextBlock Name="promptText" Text="Is font working" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="45" FontFamily="LEMON MILK Pro FTR" Foreground="{DynamicResource fg1}" MaxWidth="470" TextWrapping="WrapWithOverflow" TextAlignment="Center" LineHeight="50" LineStackingStrategy="BlockLineHeight" TextOptions.TextFormattingMode="Ideal" TextOptions.TextRenderingMode="ClearType" FocusVisualStyle="{x:Null}">
+                                <TextBlock.Effect>
+                                    <DropShadowEffect ShadowDepth="0" Direction="330" Color="{DynamicResource fgCol2}" Opacity="{DynamicResource blurOpaPrompt}" BlurRadius="{DynamicResource blurRadPrompt}"/>
+                                </TextBlock.Effect>
+                            </TextBlock>
+                        </Button>
+                        <TextBlock Name="noteText" Text="I think it is, yay!" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="25" FontFamily="LEMON MILK Pro FTR Medium" Foreground="{DynamicResource fg1}" MaxWidth="440" TextWrapping="WrapWithOverflow" TextAlignment="Center" LineHeight="32" LineStackingStrategy="BlockLineHeight" Opacity="0.69" FocusVisualStyle="{x:Null}"/>
+                        <StackPanel.Resources>
+                            <Storyboard x:Key="exDn">
+                                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="promptTrans" Storyboard.TargetProperty="Y" AccelerationRatio="1" DecelerationRatio="0" Completed="PromptChangeEnter">
+                                    <LinearDoubleKeyFrame KeyTime="0:0:0.3" Value='-130'/>
+                                    <DiscreteDoubleKeyFrame KeyTime="0:0:0.3" Value="150"/>
+                                </DoubleAnimationUsingKeyFrames>
+                                <DoubleAnimation To="0" Duration="0:0:0.3" Storyboard.TargetName="promptStack" Storyboard.TargetProperty="(StackPanel.Opacity)" AccelerationRatio="1" DecelerationRatio="0"/>
+                            </Storyboard>
+                            <Storyboard x:Key="exUp">
+                                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="promptTrans" Storyboard.TargetProperty="Y" AccelerationRatio="1" DecelerationRatio="0" Completed="PromptChangeEnter">
+                                    <LinearDoubleKeyFrame KeyTime="0:0:0.3" Value='150'/>
+                                    <DiscreteDoubleKeyFrame KeyTime="0:0:0.3" Value="-130"/>
+                                </DoubleAnimationUsingKeyFrames>
+                                <DoubleAnimation To="0" Duration="0:0:0.3" Storyboard.TargetName="promptStack" Storyboard.TargetProperty="(StackPanel.Opacity)" AccelerationRatio="1" DecelerationRatio="0"/>
+                            </Storyboard>
+                            <Storyboard x:Key="toCent">
+                                <DoubleAnimation To="0" Duration="0:0:0.3" Storyboard.TargetName="promptTrans" Storyboard.TargetProperty="Y" AccelerationRatio="0" DecelerationRatio="1"/>
+                                <DoubleAnimation To="1" Duration="0:0:0.2" Storyboard.TargetName="promptStack" Storyboard.TargetProperty="(StackPanel.Opacity)" AccelerationRatio="0" DecelerationRatio="1"/>
+                            </Storyboard>
+                        </StackPanel.Resources>
+                        <StackPanel.RenderTransform>
+                            <TranslateTransform x:Name="promptTrans" Y="150"/>
+                        </StackPanel.RenderTransform>
+                    </StackPanel>
+
+                    <Border Background="{DynamicResource L5}" IsHitTestVisible="False" VerticalAlignment="Center" Width="660" HorizontalAlignment="Center" Height="400">
+                        <Border.OpacityMask>
+                            <ImageBrush ImageSource="{StaticResource layer5}" Stretch="Uniform"/>
+                        </Border.OpacityMask>
+                    </Border>
+
+                    <Border x:Name="prevArrow" MouseLeftButtonDown="WindowDrag" Background="{DynamicResource fg1}" IsHitTestVisible="False" VerticalAlignment="Center" Margin="0,0,90,-100" Width="350" HorizontalAlignment="Center" Height="120" Opacity="0.6" Cursor="Wait">
+                        <Border.OpacityMask>
+                            <ImageBrush ImageSource="{StaticResource npArrow}" Stretch="Uniform"/>
+                        </Border.OpacityMask>
+                        <Border.RenderTransform>
+                            <TranslateTransform x:Name="prevArrowTransform" Y="85"/>
+                        </Border.RenderTransform>
+                        <Border.Resources>
+                            <Storyboard x:Key="upAnim">
+                                <DoubleAnimation Storyboard.TargetName="prevArrowTransform"
+                                         Storyboard.TargetProperty="Y" To="0" Duration="0:0:0.2" AccelerationRatio="0" DecelerationRatio="0.8"/>
+                            </Storyboard>
+                            <Storyboard x:Key="dnAnim">
+                                <DoubleAnimation Storyboard.TargetName="prevArrowTransform"
+                                         Storyboard.TargetProperty="Y" To="85" Duration="0:0:0.3" AccelerationRatio="0.8" DecelerationRatio="0"/>
+                            </Storyboard>
+                        </Border.Resources>
+                    </Border>
+
+                    <Border x:Name="nextArrow" MouseLeftButtonDown="WindowDrag" Background="{DynamicResource fg1}" IsHitTestVisible="False" VerticalAlignment="Top" Margin="0,-115,90,0" Width="350" HorizontalAlignment="Center" Height="120" Opacity="0.6" RenderTransformOrigin="0.5,0.5">
+                        <Border.OpacityMask>
+                            <ImageBrush ImageSource="{StaticResource npArrow}" Stretch="Uniform"/>
+                        </Border.OpacityMask>
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleY="-1"/>
+                                <TranslateTransform x:Name="nextArrowTransform" Y="0"/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                        <Border.Resources>
+                            <Storyboard x:Key="upAnimat">
+                                <DoubleAnimation Storyboard.TargetName="nextArrowTransform"
+                                         Storyboard.TargetProperty="Y" To="52" Duration="0:0:0.2" AccelerationRatio="0" DecelerationRatio="0.8"/>
+                            </Storyboard>
+                            <Storyboard x:Key="dnAnimat">
+                                <DoubleAnimation Storyboard.TargetName="nextArrowTransform"
+                                         Storyboard.TargetProperty="Y" To="0" Duration="0:0:0.3" AccelerationRatio="0.8" DecelerationRatio="0"/>
+                            </Storyboard>
+                        </Border.Resources>
+                    </Border>
+
+                    <Border Background="{DynamicResource L6}" IsHitTestVisible="False" VerticalAlignment="Center" Width="660" HorizontalAlignment="Center" Height="400">
+                        <Border.OpacityMask>
+                            <ImageBrush ImageSource="{StaticResource layer6}" Stretch="Uniform" Viewbox="0,-0.23,1,1" Viewport="0,0,1,1">
+                                <ImageBrush.RelativeTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform CenterY="0" CenterX="0"/>
+                                        <TranslateTransform X="0" Y="0"/>
+                                    </TransformGroup>
+                                </ImageBrush.RelativeTransform>
+                            </ImageBrush>
+                        </Border.OpacityMask>
+                    </Border>
+
+                    <Button Background="{DynamicResource fg3}" Width="23" Height="23" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,15,15,0" BorderThickness="0" Click="CloseClick" Cursor="Hand">
+                        <Button.OpacityMask>
+                            <ImageBrush ImageSource="/res/Masks/close.png" Stretch="Uniform" RenderOptions.BitmapScalingMode="HighQuality"/>
+                        </Button.OpacityMask>
+                    </Button>
+                    <Button Background="{DynamicResource fg2}" Width="35" Height="35" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10,10" BorderThickness="0" Click="SwitchTheme" Cursor="Hand">
+                        <Button.OpacityMask>
+                            <ImageBrush ImageSource="{StaticResource IconSun}" Stretch="Uniform" RenderOptions.BitmapScalingMode="HighQuality"/>
+                        </Button.OpacityMask>
+                    </Button>
+
+                    <TextBlock Name="dateText" Text="Wednesday 16th September 2022" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="27" FontFamily="LEMON MILK Pro FTR Medium" Foreground="{DynamicResource fg2}" TextWrapping="WrapWithOverflow" TextAlignment="Center" LineHeight="32" LineStackingStrategy="BlockLineHeight" Opacity="1" Margin="17,0,0,10">
+                        <TextBlock.Effect>
+                            <DropShadowEffect ShadowDepth="0" Direction="330" Color="{DynamicResource fgCol1}" Opacity="0.1" BlurRadius="6"/>
+                        </TextBlock.Effect>
+                    </TextBlock>
+                </Grid>
+            </Border>
+        </Canvas>
+    </Viewbox>
+</Window>

@@ -1,0 +1,107 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <LinearGradientBrush x:Key="Sky">
+        <LinearGradientBrush.RelativeTransform>
+            <TransformGroup>
+                <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                <SkewTransform CenterX="0.5" CenterY="0.5"/>
+                <RotateTransform Angle="-106" CenterX="0.5" CenterY="0.5"/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </LinearGradientBrush.RelativeTransform>
+        <GradientStop Color="#EE06003b" Offset="0.9"/>
+        <GradientStop Color="#b92e68" Offset="0.4"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="L1">
+        <LinearGradientBrush.RelativeTransform>
+            <TransformGroup>
+                <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                <SkewTransform CenterX="0.5" CenterY="0.5"/>
+                <RotateTransform Angle="-108" CenterX="0.5" CenterY="0.5"/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </LinearGradientBrush.RelativeTransform>
+        <GradientStop Color="#9725ad" Offset="0.57"/>
+        <GradientStop Color="#F2f1578a" Offset="0.3"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="L2">
+        <LinearGradientBrush.RelativeTransform>
+            <TransformGroup>
+                <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                <SkewTransform CenterX="0.5" CenterY="0.5"/>
+                <RotateTransform Angle="-106" CenterX="0.5" CenterY="0.5"/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </LinearGradientBrush.RelativeTransform>
+        <GradientStop Color="#641375" Offset="0.6"/>
+        <GradientStop Color="#F2f1578a" Offset="0"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="L2Hi">
+        <LinearGradientBrush.RelativeTransform>
+            <TransformGroup>
+                <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                <SkewTransform CenterX="0.5" CenterY="0.5"/>
+                <RotateTransform Angle="-110" CenterX="0.5" CenterY="0.5"/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </LinearGradientBrush.RelativeTransform>
+        <GradientStop Color="#7f1b8d" Offset="0.64"/>
+        <GradientStop Color="#007f1b8d" Offset="0.4"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="L3">
+        <LinearGradientBrush.RelativeTransform>
+            <TransformGroup>
+                <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                <SkewTransform CenterX="0.5" CenterY="0.5"/>
+                <RotateTransform Angle="-93" CenterX="0.5" CenterY="0.5"/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </LinearGradientBrush.RelativeTransform>
+        <GradientStop Color="#4e0d55" Offset="0.47"/>
+        <GradientStop Color="#F2f1578a" Offset="0"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="L4">
+        <LinearGradientBrush.RelativeTransform>
+            <TransformGroup>
+                <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                <SkewTransform CenterX="0.5" CenterY="0.5"/>
+                <RotateTransform Angle="-97" CenterX="0.5" CenterY="0.5"/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </LinearGradientBrush.RelativeTransform>
+        <GradientStop Color="#310a4e" Offset="0.42"/>
+        <GradientStop Color="#F2f1578a" Offset="0"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="L5">
+        <LinearGradientBrush.RelativeTransform>
+            <TransformGroup>
+                <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                <SkewTransform CenterX="0.5" CenterY="0.5"/>
+                <RotateTransform Angle="-110" CenterX="0.5" CenterY="0.5"/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </LinearGradientBrush.RelativeTransform>
+        <GradientStop Color="#19043d" Offset="0.4"/>
+        <GradientStop Color="#F2f1578a" Offset="-0.5"/>
+    </LinearGradientBrush>
+
+    <SolidColorBrush x:Key="L6" Color="#000013"/>
+
+    <SolidColorBrush x:Key="fg1" Color="#feefc9"/>
+    <SolidColorBrush x:Key="fg2" Color="#CA370889"/>
+    <SolidColorBrush x:Key="fg3" Color="#7F1375"/>
+
+    <Color x:Key="fgCol1">#0c2e44</Color>
+    <Color x:Key="fgCol2">#f40792</Color>
+
+    <sys:Double x:Key="blurRadPrompt">40</sys:Double>
+    <sys:Double x:Key="blurOpaPrompt">1</sys:Double>
+</ResourceDictionary>
